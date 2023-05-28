@@ -1,0 +1,520 @@
+ @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+
+ :root{
+    --premiereCouleur:rgb(225, 198, 202);
+    --deuxiemeCouleur:rgb(223,205,185);
+    --troisiemeCouleur:rgb(164,157,175);
+ }
+
+/*enlever padding et margin de la valeur par d'afaut*/
+*,::after,::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+   
+    
+
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bonjour,.presentation1,.accueil div,.quiSuisJeH2,.mesCompetencesMesQualitesH2,.enSavoirPlus,.portefolioH2,.contactH2
+{
+    font-family: 'Lobster Two', cursive;
+}
+
+ul li a{
+   
+    font-family: 'Lobster Two', cursive;
+    font-size: 20px;
+  
+    font-weight: black;
+    color:black;
+    text-decoration: none;
+}
+
+ul{
+    list-style-type:none;    
+}
+
+@keyframes titredeDroiteAGauche{
+    from{
+        left: -100%;;
+    }
+    to{
+        left:0;
+    }
+}
+
+/*--------------------------------------------MENU---------------------------------------------*/
+/* .menuAccueil {
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;     
+} */
+
+.menu
+{
+    
+    display:flex;
+    justify-content: center;
+    position:sticky;
+    top:0px; 
+    z-index:2;
+    background-color:var(--premiereCouleur);
+}
+
+
+
+.accueil{
+    background-image: url(img/bande1.jpg);
+    background-size: cover;
+    width: 100vw;
+    
+    background-repeat: no-repeat;
+    filter: hue-rotate(340deg);
+    text-align: center; 
+    animation-name:fondEcranBouge;
+    animation-duration:20s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+    animation-fill-mode:backwards;
+}
+
+@keyframes fondEcranBouge{
+    from{
+        background-position:0 0;
+    }
+    to{
+        background-position:100% 100%;
+    }
+}
+
+.accueil div
+{
+    display:inline-block;
+    flex-direction: column;
+    text-align: center;
+    font-size:30px;
+    background-color: transparent;
+    margin:10px;
+    padding:20px;
+}
+
+
+
+.bonjour
+{
+   /* font-size:calc(30px + 2vw); */
+    font-size: 50px;
+    color:black;
+    font-weight: bold;
+    /* color:transparent; */
+    visibility:hidden;
+    position:relative;
+    /* animation-name:hello;
+    animation-duration:3s; */
+
+}
+
+.bonjour:before{
+    content:"Bonjour";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    color:black;
+   animation:hello 2s; 
+   visibility:visible;
+} 
+
+@keyframes hello{
+    0%{
+        left:100%;
+        
+    }
+    100%{
+        left:0;
+       
+    }
+}
+
+.presentation1
+{
+    font-weight: bold;
+    max-width: 600px;
+    visibility:hidden;
+    position:relative; 
+}
+
+.presentation1:before{
+    content:"Je suis actuelllement en recherche d'une formation intensive et d'un stage dans le développement web dans la région de Poitiers ou à 1h de route je peux également faire à distance";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    color:black;
+    visibility:visible;
+   animation-name:titredeDroiteAGauche;
+    animation-duration:2s; 
+
+
+}
+
+
+
+.menu li {
+    padding:30px;
+}
+
+.menu a {
+    transition: font-size 0.5s;
+}
+
+.menu a:hover {
+    font-size: 30px;
+}
+
+
+.boutonContact
+{
+    font-weight: bold;
+    text-decoration:none;
+    color:black;
+    background-color:var(--premiereCouleur) ;
+    padding: 15px;
+    border:2px solid black;
+    border-radius:50px/50px;
+    transition:background-color 2s;
+    transition:color 2s;
+      
+}
+
+.boutonContact:hover
+{
+    background-color:black;
+    color:var(--premiereCouleur);
+   
+}
+
+/*----------------------------------------Qui suis je----------------------------------*/
+
+
+/*-----------------------------Chose en commun-----------*/
+.quiSuisJeH2{
+    visibility:hidden;
+    position:relative;
+}
+
+.quiSuisJeH2:before{
+    content:"Qui suis je";
+    position:absolute;
+    visibility:visible;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    animation-name:titredeDroiteAGauche;
+    animation-duration:2s;
+}
+
+.quiSuisJeH2,.mesCompetencesMesQualitesH2,.portefolioH2,.contactH2
+{
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#competencesQualites,#quiSuisJe,#portefolio,#contact
+{
+    padding: 30px;
+}
+
+.mesCompetencesH3,.mesQualitesH3
+{
+    margin-bottom: 7px;
+    padding-bottom: 47px;
+}
+
+.mesCompetencesMesQualitesH2,.portefolioH2.contactH2
+{
+    padding-bottom: 150px;
+}
+
+
+/*-----------------------------Autres--------*/
+
+.quiSuisJeBloc1
+{
+    display:flex;
+}
+
+.photoQuiSuisJe
+{
+    background-size: cover;
+    width: 20%;
+    height: 20%;
+    animation-name:imageQuiBouge;
+    animation-duration:13s;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+
+}
+
+@keyframes imageQuiBouge{
+    0%{
+        transform:translateY(0);
+        
+    }
+    25%{
+        transform:translateY(20px);
+    }
+    75%{
+        transform:translateY(-20px);
+    }
+    100%{
+        transform:translateY(0)
+    }
+}
+
+#quiSuisJe
+{
+    
+    background-color: var(--deuxiemeCouleur);
+}
+
+
+.paragraphePresentation
+{
+    margin: auto;
+    font-size: 20px;
+    max-width: 600px;
+}
+
+#competencesQualites
+{
+    background-color:var(--premiereCouleur) ;
+}
+
+#mesCompetencesMesQualitesDiv
+{
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+
+.mesCompetencesPresentation
+{
+    font-weight: bold;
+    font-style: italic;
+    padding-bottom: 23.5px;
+    
+}
+
+#mesCompetencesPresentation
+{
+    padding-top: 23.5px;
+}
+
+.mesCompetences ul li,.mesQualites ul li{
+    list-style-type: disclosure-closed;
+}
+
+/* .enSavoirPlus
+{
+    font-size: 20px;
+    border:2px solid black;
+    border-radius:50px/50px;
+    text-decoration:none;
+    padding: 10px;
+   
+    color:black;
+    background-color: rgb(223,205,185);
+    transition:background-color 2s,color 2s;
+} */
+
+/*-----------------------------------------------------------PORTEFOLIO--------------------------------*/
+
+#portefolio
+{
+    background-color:var(--troisiemeCouleur);
+   
+}
+
+.portefolioMenu
+{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#contact
+{
+    background-color: var(--deuxiemeCouleur);
+}
+
+.hamberger
+{
+    display:none;
+}
+
+.portefolio2
+{
+    margin:5px;
+    width:50vh;
+    font-size: 20px;
+    border:2px solid black;
+    display:inline-flex;
+    flex-direction: column;
+    /* flex-wrap:wrap; */
+    padding:10px;
+}
+
+.portefolio2 h1
+{
+    font-size:20px;
+}
+
+.portefolio2 a
+{
+    color:#551A8B;
+    text-decoration:none;
+    /*color:black;*/
+    font-weight:bold ;
+    transition:font-size 0.5s;
+}
+
+
+.portefolio2 a:hover{
+    font-size:25px;
+}
+
+/*------------------------------------------------------------CONTACT-------------------------------------*/
+
+#compteGithub,#compteLinkedin
+{
+    cursor:pointer;
+    color:#551A8B;
+}
+
+#compteGithub:hover,#compteLinkedin:hover
+{
+    font-weight: bold;
+}
+
+
+.divContact
+{
+    font-family: Arial, Helvetica, sans-serif; 
+    font-size: 20px;
+    text-align: center;
+}
+
+/*-----------------------------------------------MEDIA QUARIES------------------------------------------*/
+
+@media (max-width:1234px)
+{
+    
+    div.mesCompetences,div.mesQualites
+        
+    {
+        max-width: 350px;
+    }
+
+}
+
+@media(max-width:870px)
+{
+    div#mesCompetencesMesQualitesDiv
+        
+    {
+        flex-direction: column;
+        align-items:center;
+    }
+
+    h3.mesCompetancesH3
+    {
+        font-weight: bold;
+    }
+
+    .paragraphePresentation
+    {
+        max-width: 350px;
+    }
+
+}
+
+@media(max-width:813px)
+{
+    ul.menu{
+        display:none;
+    }
+}
+
+@media(max-width:775px){
+    .portefolio2{
+        width:100%;
+    }
+}
+
+@media(max-width:758px)
+{
+    img.photoQuiSuisJe
+    {
+        display:none;
+    }
+
+    h2.quiSuisJeH2
+    {
+        margin-bottom: 50px;
+    }
+}
+
+
+@media(max-width:447px)
+{
+    div.divMargin
+    {
+        margin-top: -70px;
+    }
+}
+
+@media(max-width:334px)
+{
+    body{
+        max-width:120%;
+        width:100vh;
+   
+    }
+
+    #competencesQualites,#quiSuisJe,#portefolio,#contact
+    {
+        padding:15px;
+    }
+
+    p.presentation1
+    {
+        font-size:25px;
+    }
+    
+    a.boutonContact{
+        padding:5px;
+        font-size:25px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
